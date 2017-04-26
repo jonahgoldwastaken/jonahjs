@@ -1,5 +1,5 @@
 window.onload = function() {
-    var elements = document.body.children;
+    var elements = document.body.getElementsByTagName("*");
     for (var i = 0; i < document.body.children.length / (Math.floor(Math.random() * 3 + 1)); i++) {
         var image = document.createElement("IMG");
         image.src = "http://www.jonahjs.nl/pictures/" + (Math.floor(Math.random() * 4)) + ".jpg";
