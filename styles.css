@@ -11,8 +11,3 @@ body {
     width: 800px;
     margin: auto;
 }
-
-.downloadbtn {
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
