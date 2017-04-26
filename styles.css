@@ -1,4 +1,18 @@
-main {
-    width: 1200px;
+body {
+    width: 960px;
     margin: auto;
+
+}
+.page-header {
+    font-size: 4em;
+}
+
+.well {
+    width: 800px;
+    margin: auto;
+}
+
+.downloadbtn {
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
