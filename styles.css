@@ -11,3 +11,6 @@ body {
     width: 800px;
     margin: auto;
 }
+ul>li:has(a) {
+    color: red !important;
+}

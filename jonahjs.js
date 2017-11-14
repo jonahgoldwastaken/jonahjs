@@ -1,43 +1,38 @@
-var elements = document.body.getElementsByTagName("*");
-var textElements = document.body.querySelectorAll("h1, h2, h3, h4, h5, h6, p, a, li");
+var textElements = document.body.querySelectorAll("h1, h2, h3, h4, h5, h6, p, ul>li, span, a:not(:empty)");
+var imageElements = document.body.querySelectorAll("img");
 var JonahJS = {
-    text: "Jonah ",
-    link: "http://www.jonahjs.nl/pictures/jonah.jpg",
-    picAmnt: 4
+    text: "Jonah",
+    image: "http://www.jonahjs.nl/pictures/jonah.jpg",
 };
-var jonah = "Jonah ";
 var t = -1;
+var p = -1;
 
-function addJonah(currentElement) {
-    currentElement.innerHTML += JonahJS.text;
+function changeTextToJonah(currentElement) {
+    currentElement.innerHTML += JonahJS.text + " ";
 }
 
-function injectSauce() {
+function changeAllImagesToJonah() {
+    p++
+    imageElements[p].src = JonahJS.image;
+}
+
+function injectJonah() {
     t++;
     var amntOfWords = textElements[t].innerHTML.split(' ').length;
     textElements[t].innerHTML = "";
     var ding = textElements[t];
     for (var o = 0; o < amntOfWords; o++) {
         setTimeout(function() {
-            addJonah(ding);
+            changeTextToJonah(ding);
         }, 25 * o);
     }
 }
 
-window.onload = function() {
-    document.body.style.background = "url(" + JonahJS.link + ") no-repeat center center fixed";
-    document.body.style.backgroundSize = "cover";
-    for (var i = 0; i < elements.length / (Math.floor(Math.random() * 3 + 1)); i++) {
-        setTimeout(function() {
-            var selectedElement = elements[Math.floor(Math.random() * elements.length)];
-            var image = document.createElement("IMG");
-            image.src = JonahJS.link;
-            image.style.width = "200px";
-            image.style.height = "200px";
-            selectedElement.parentNode.insertBefore(image, selectedElement);
-        }, 200 * i);
+JonahJS.init = function() {
+    for (var i = 0; i < imageElements.length; i++) {
+        setTimeout(changeAllImagesToJonah, 1000 * i);
     }
     for (i = 0; i < textElements.length; i++) {
-        setTimeout(injectSauce, 100 * i);
+        setTimeout(injectJonah, 100 * i);
     }
 };
