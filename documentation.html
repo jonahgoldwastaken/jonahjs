@@ -34,9 +34,13 @@
         </div>
     </div>
     <h2 class="page-header">Installation</h2>
-    <p>To install, just link the JS file at the bottom of your HTML document:</p>
-    <pre><code class="html">&lt;script src="jonahjs.js">&lt;/script></code></pre>
-    <p>That's it for now!</p>
+    <p>To install, just put it in the same folder as your html document. Then import and initialise it:
+    <pre><code class="html">&lt;script>
+        import { JonahJS } from './jonahjs.js';
+        window.addEventListener('load', function() {
+            JonahJS.init
+        });
+    &lt;/script></code></pre>
 </body>
 
 </html>
