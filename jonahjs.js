@@ -1,4 +1,4 @@
-var JonahJS = {
+export var JonahJS = {
     text: "Jonah",
     image: "http://www.jonahjs.nl/pictures/jonah.jpg",
     init: function() {
