@@ -5,7 +5,7 @@ export var JonahJS = {
         var textElements = document.body.querySelectorAll("h1, h2, h3, h4, h5, h6, p, ul>li, span, a:not(:empty), legend");
         var imageElements = document.body.querySelectorAll("img");
         for (var i = 0; i < imageElements.length; i++) {
-            setTimeout(this.changeAllImagesToJonah(i), 1000 * i);
+            setTimeout(this.changeAllImages(i), 1000 * i);
         }
         for (i = 0; i < textElements.length; i++) {
             setTimeout(this.injectJonah(i), 100 * i);
