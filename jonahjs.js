@@ -6,7 +6,7 @@ export const JonahJS = {
         this.textElementArray = Array.from(textElements)
         this.imageElements = document.body.querySelectorAll('img')
 
-        for (var i = 0; i < this.textElementArray.length; i++) {
+        for (let i = 0; i < this.textElementArray.length; i++) {
             if (this.textElementArray[i].children.length != 0) {
                 for (let j = 0; j < this.textElementArray[i].children.length; j++) {
                     let el = this.textElementArray.indexOf(this.textElementArray[i].children[j], 0)
@@ -18,10 +18,10 @@ export const JonahJS = {
             this.textElementArray[i].innerHTML = ''
         }
 
-        for (var i = 0; i < this.imageElements.length; i++) {
+        for (let i = 0; i < this.imageElements.length; i++) {
             setTimeout(this.changeAllImages(i), 1000 * i)
         }
-        for (var i = 0; i < this.textElementArray.length; i++) {
+        for (let i = 0; i < this.textElementArray.length; i++) {
             setTimeout(this.injectJonah(i), 100 * i)
         }
 
